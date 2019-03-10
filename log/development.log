@@ -1850,3 +1850,22 @@ Processing by ProductsController#create as */*
 [active_model_serializers]   [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 24]]
 [active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (1.58ms)
 Completed 201 Created in 7ms (Views: 1.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/products/new" for 126.2.63.14 at 2019-03-10 23:34:59 +0000
+Cannot render console from 126.2.63.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 126.2.63.14 at 2019-03-10 23:35:20 +0000
+Cannot render console from 126.2.63.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEKI9jVqjeX79npwtYSyRoPHHGX4quH/BGtbExSHPWFeUm9qjdjsq7md8IXYnTCcWVqhgp54kI+/2Mn7ewPFqQ==", "product"=>{"name"=>"Water bottle", "price"=>"30.00", "description"=>"aluminum, cool", "inventory"=>"4"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Water bottle"], ["description", "aluminum, cool"], ["inventory", 4], ["price", 30], ["created_at", "2019-03-10 23:35:21.007025"], ["updated_at", "2019-03-10 23:35:21.007025"]]
+  [1m[35m (3.2ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 25]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (1.79ms)
+Completed 201 Created in 9ms (Views: 2.3ms | ActiveRecord: 3.6ms)
